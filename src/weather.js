@@ -8,7 +8,7 @@ export function writeDOM(weatherObject) {
 
 export async function getData(key, location) {
   try {
-    const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${key}&q=${location}`, { mode: 'cors' } );
+    const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${key}&q=${location}`, { mode: 'cors' });
     const weatherData = await response.json();
     const weatherObject = {
       name: weatherData.location.name,
@@ -22,15 +22,14 @@ export async function getData(key, location) {
     // I can't index properties of weatherObject outside the async function, so this will have to do
     writeDOM(weatherObject);
     return weatherObject;
-  }
-  catch (error){
+  } catch (error) {
     alert('Enter a valid location');
   }
 }
 
 export function search(KEY) {
   const search = document.getElementById('search');
-  getData(KEY, search.value)
+  getData(KEY, search.value);
   search.value = '';
 }
 

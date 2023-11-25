@@ -10,7 +10,7 @@ document.getElementById('search-button').addEventListener('click', () => {
 
 // The enter keypress as an alternative submit button
 document.getElementById('search-bar').addEventListener('keypress', () => {
-  if (event.key == 'Enter') {
+  if (event.key === 'Enter') {
     event.preventDefault();
     document.getElementById('search-button').click();
   }
